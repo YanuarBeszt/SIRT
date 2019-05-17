@@ -1,3 +1,10 @@
+<!-- alerl success save -->
+<?php if ($this->session->flashdata('success')) : ?>
+    <div class="alert alert-success" role="alert">
+        <?php echo $this->session->flashdata('success'); ?>
+    </div>
+<?php endif; ?>
+
 <!-- Page Heading -->
 <div class="row">
     <!-- Basic Card Example -->
@@ -7,7 +14,7 @@
                 <h6 class="center font-weight-bold text-primary">Profil</h6>
             </div>
             <div class="text-right col-xl-7 col-md-3">
-                <a href="<?= base_url() ?>Admin/Profil/edit/<?= $pend['nokk']; ?>" class="btn btn-success">
+                <a href="<?= base_url() ?>Admin/Profil/edit/<?= $pend['nik']; ?>" class="btn btn-success">
                     <span class="icon text-white-50">
                         <i class="fas fa-edit"></i>
                     </span>
@@ -29,7 +36,7 @@
                     <strong>NIK </strong>
                 </div>
                 <div class="col-xl-7 col-md-7 mb-4">
-                    <span><?= $this->session->userdata('nik'); ?></span>
+                    <span><?= $pend['nik']; ?></span>
                 </div>
             </div>
             <div class="row clearfix">
@@ -37,7 +44,7 @@
                     <strong>NAMA </strong>
                 </div>
                 <div class="col-xl-7 col-md-7 mb-4">
-                    <span><?= $this->session->userdata('nama'); ?></span>
+                    <span><?= $pend['namaPenduduk']; ?></span>
                 </div>
             </div>
             <div class="row clearfix">

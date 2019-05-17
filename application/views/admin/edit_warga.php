@@ -1,11 +1,16 @@
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Detail Penduduk</h1>
+</div>
+
 <div class="row">
     <!-- Basic Card Example -->
     <div class="card shadow mb-4 col-12">
         <div class="card-header">
-            <h6 class="m-1 font-weight-bold text-primary"><a href="<?= base_url() ?>Admin/Profil">Profil</a> - Edit</h6>
+            <h6 class="m-1 font-weight-bold text-primary">Edit Data</h6>
         </div>
         <div class="card-body">
-            <form action="<?php echo base_url() . 'Admin/Profil/Update'; ?>" method="post">
+            <form action="<?php echo base_url() . 'Admin/DetailPenduduk/Update'; ?>" method="post">
                 <div class="row clearfix">
                     <div class="col-sm-4">
                         <div class="form-group form-float">
@@ -198,12 +203,13 @@
                     </div>
                 </div>
                 <hr />
-                <a href="<?= base_url() ?>Admin/Profil/GantiPassword">Ganti Password ?</a>
+                <?php $uri = $this->uri->segment('4') ?>
+                <a href="<?= base_url() ?>Admin/DetailPenduduk/GantiPassword/<?= $uri ?>">Ganti Password ?</a>
                 <br>
                 <br>
                 <div class="row clearfix">
                     <div class="text-left col-sm-7">
-                        <a href="<?= base_url() ?>Admin/Profil" class="btn btn-danger btn-icon-split">
+                        <a href="<?= base_url() ?>Admin/DetailPenduduk" class="btn btn-danger btn-icon-split">
                             <span class="icon text-white-50">
                                 <i class="fas fa-window-close"></i>
                             </span>

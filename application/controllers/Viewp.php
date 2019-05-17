@@ -8,13 +8,15 @@ class Viewp extends CI_Controller
         parent::__construct();
         cek_nik();
         cek_statusRT();
+        $this->load->model('Surat_model');
     }
 
     public function index()
     {
         $data =
             [
-                'isinya' => 'warga/home'
+                'isinya' => 'warga/home',
+                'surat' => $this->Surat_model->getAll()
             ];
         $this->load->view('viewp', $data);
 

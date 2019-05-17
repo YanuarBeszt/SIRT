@@ -28,6 +28,7 @@
     </div>
 </div>
 
+
 <script src="<?= base_url('assets/sbadmin2/') ?>vendor/jquery/jquery.js"></script>
 
 <!-- Bootstrap core JavaScript-->
