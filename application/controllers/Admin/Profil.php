@@ -52,7 +52,7 @@ class Profil extends CI_Controller
     {
         $penduduk = $this->Penduduk_model;
         $penduduk->update();
-        $this->session->set_flashdata('success', 'Berhasil menambahkan Penduduk');
+        $this->session->set_flashdata('success', 'Berhasil Mengganti Data Penduduk');
         $this->index();
     }
 

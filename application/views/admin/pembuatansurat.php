@@ -25,13 +25,12 @@
                             <tr>
                                 <td><?= $no ?></td>
                                 <td><?= $srt->nama; ?></td>
-                                <?php $id = $srt->id; ?>
-                                <td><?= '<a href ="http://localhost/SIRT/Admin/PembuatanSurat/buatSurat" class="btn btn-success">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-print"></i>
-                                    </ span>
-                                    <span class="text">Print</span>
-                                    </a>' ?></td>
+                                <td><a href="http://localhost/SIRT/Admin/PembuatanSurat/buatSurat/<?= $srt->url_surat ?>" class="btn btn-success">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-print"></i>
+                                        </span>
+                                        <span class="text">Print</span>
+                                    </a></td>
                                 <?php $no++ ?>
                             </tr>
                         </tbody>

@@ -127,7 +127,6 @@ class Penduduk_model extends CI_Model
     public function getById($id)
     {
         $this->db->select('tb_penduduk.nokk, tb_penduduk.nik, tb_penduduk.namaPenduduk, tb_penduduk.tanggalLahir,tb_kelamin.id AS idkelamin, tb_kelamin.ket AS kelamin,regencies.id AS idkota, name,tb_agama.id AS idagama, nama_agama,tb_pendidikan.id AS idpendidikan, nama_pendidikan, tb_pekerjaan.id AS idpekerjaan, nama_pekerjaan,tb_kwn.id AS idtemla, country_name,tb_statusKlg.id AS idstatusKlg, tb_statusKlg.ket AS klg,tb_penduduk.idstatusPdd, tb_statusPkw.id AS idstatusPkw, tb_statusPkw.ket AS pkw, tb_penduduk.password');
-        // return $this->db->get_where($this->_table, ["nik" => $id])->row_array();
         $this->db->from('tb_penduduk');
         $this->db->join($this->_tbKelamin, 'tb_kelamin.id=tb_penduduk.idkelamin', 'left');
         $this->db->join($this->_tbRegency, 'regencies.id=tb_penduduk.tempatLahir', 'left');

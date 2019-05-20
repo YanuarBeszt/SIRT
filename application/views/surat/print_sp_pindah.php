@@ -23,7 +23,7 @@
                             <h4 class="kop">SURAT PENGANTAR</h4>
                         </u></div>
                     <div align="center">
-                        <h4 class="kop3">Nomor : <?= $nosurat ?></h4>
+                        <h4 class="kop3">Nomor : 001/SP/V/2019</h4>
                     </div>
                 </table>
                 <div class="clear"></div>
@@ -39,7 +39,7 @@
                         <tr>
                             <td width="23%">Nama Lengkap</td>
                             <td width="3%">:</td>
-                            <td width="64%"><?= $warga['namaPenduduk']; ?></td>
+                            <td width="64%">YANUAR RIDWAN</td>
                         </tr>
                         <tr>
                             <td>Tempat dan Tgl. Lahir </td>

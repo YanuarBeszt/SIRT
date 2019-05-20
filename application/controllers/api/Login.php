@@ -13,6 +13,7 @@ class Login extends REST_Controller
     {
         parent::__construct();
         $this->load->model('Login_model');
+        $this->load->model('Penduduk_model');
     }
 
     //login  
@@ -27,6 +28,7 @@ class Login extends REST_Controller
                 $data =
                     [
                         'login' => $result,
+                        'success' => '1',
                         'pesan' => 'RT Berhasil Login'
                     ];
                 echo json_encode($data);
@@ -35,6 +37,7 @@ class Login extends REST_Controller
                 $data =
                     [
                         'login' => $result,
+                        'success' => '2',
                         'pesan' => 'Warga Berhasil Login'
                     ];
                 echo json_encode($data);
@@ -46,6 +49,18 @@ class Login extends REST_Controller
                     'pesan' => 'Gagal Login'
                 ];
             echo json_encode($data);
+        }
+    }
+
+    public function index_get()
+    {
+        $id = $this->get('nik');
+        if ($id === NULL) {
+            $query = $this->Penduduk_model->getAll();
+            echo json_encode($query);
+        } else {
+            $query = $this->Penduduk_model->getById($id);
+            echo json_encode($query);
         }
     }
 }

@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 <div class="row clearfix">
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <div class="form-group form-float">
                             <div class="form-line">
                                 <label class="form-label">Tanggal Lahir</label>
