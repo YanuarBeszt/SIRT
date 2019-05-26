@@ -35,7 +35,6 @@ class Profil extends CI_Controller
                 'isinya' => 'admin/edit_profil',
                 'pend' => $this->Penduduk_model->getById($nik),
                 'provinces' => $this->WilayahDD_model->getProvinces(),
-                'kota' => $this->WilayahDD_model->getkota(),
                 'hubkk' => $this->Kkeluarga_model->getHubKK(),
                 'agama' => $this->Kkeluarga_model->getAgama(),
                 'negaraan' => $this->Kkeluarga_model->getKwn(),
@@ -53,7 +52,7 @@ class Profil extends CI_Controller
         $penduduk = $this->Penduduk_model;
         $penduduk->update();
         $this->session->set_flashdata('success', 'Berhasil Mengganti Data Penduduk');
-        $this->index();
+        redirect(index_page());
     }
 
     public function GantiPassword()

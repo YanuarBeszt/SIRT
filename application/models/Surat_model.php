@@ -68,4 +68,9 @@ class Surat_model extends CI_Model
         $this->status = $post["status"];
         $this->db->update('tb_transaksi', $this, array('id' => $post['nosurat']));
     }
+
+    public function delete($id)
+    {
+        return $this->db->delete('tb_transaksi', array("id" => $id));
+    }
 }

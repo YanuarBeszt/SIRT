@@ -123,6 +123,33 @@ class Penduduk_model extends CI_Model
         return $query->result();
     }
 
+    public function jumlahPdd()
+    {
+        $this->db->select("COUNT('nik')");
+        $this->db->from($this->_table);
+        $query = $this->db->get()->row_array();
+        return $query["COUNT('nik')"];
+    }
+
+    public function jumlahLaki()
+    {
+        $this->db->select("COUNT('idkelamin')");
+        $this->db->from($this->_table);
+        $this->db->where('idkelamin=1');
+        $query = $this->db->get()->row_array();
+        return $query["COUNT('idkelamin')"];
+    }
+
+    function jumlahBalita()
+    {
+        $y = date('Y') - 5;
+        $this->db->select('COUNT(tanggalLahir)');
+        $this->db->from($this->_table);
+        $this->db->where("YEAR(tanggalLahir)>='$y'");
+        $query = $this->db->get()->row_array();
+        return $query['COUNT(tanggalLahir)'];
+    }
+
     //mengambil data sesuai id dari databse
     public function getById($id)
     {

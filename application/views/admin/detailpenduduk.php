@@ -8,6 +8,20 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Detail Penduduk</h1>
+
+    <!-- Pending Requests Card Example -->
+    <div class="col-md-2 mb-0">
+        <a href="<?= base_url() ?>Admin/DetailPenduduk/DaftarKK">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-1">
+                    <div class="text-m font-weight-bold text-info text-uppercase">Daftar KK</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-arrow-right fa-2x text-info"></i>
+                </div>
+            </div>
+        </a>
+    </div>
 </div>
 <!-- Content Row -->
 <div class="row">
@@ -19,10 +33,10 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Balita</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $balita; ?></div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        <i class="fas fa-child fa-3x text-gray-400"></i>
                     </div>
                 </div>
             </div>
@@ -36,10 +50,10 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah KK</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $kk ?></div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        <i class="fas fa-users fa-3x text-gray-400"></i>
                     </div>
                 </div>
             </div>
@@ -53,19 +67,10 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Jumlah Penduduk</div>
-                        <div class="row no-gutters align-items-center">
-                            <div class="col-auto">
-                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                            </div>
-                            <div class="col">
-                                <div class="progress progress-sm mr-2">
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $pdd ?></div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        <i class="fa fa-user fa-3x text-gray-400"></i>
                     </div>
                 </div>
             </div>
@@ -79,10 +84,10 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Jumlah Laki - Laki</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $laki ?></div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                        <i class="fas fa-male fa-3x text-gray-400"></i>
                     </div>
                 </div>
             </div>
@@ -94,9 +99,6 @@
 <div class="row">
     <!-- Basic Card Example -->
     <div class="card shadow mb-4 col-12">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
-        </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

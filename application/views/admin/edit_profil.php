@@ -92,21 +92,14 @@
                                     <?php foreach ($provinces as $prov) {
                                         $split = str_split($pend['idkota']);
                                         $datasplit = ($split[0] . $split[1]);
-                                        ?>
-                                        <option <?php if ($datasplit == $prov['id']) {
-                                                    echo "selected";
-                                                } ?> value=" <?= $prov['id'] ?>"><?= $prov['name'] ?></option>
-                                    <?php } ?>
+                                        echo '<option ' . (($datasplit == $prov[id]) ? 'selected' : "") . '
+                                        value="' . $prov['id'] . '">' . $prov['name'] . '</option>';
+                                    } ?>
                                 </Select>
                             </div>
                             <div class="col-sm-6">
                                 <select class="form-control show-tick" name="tempatLahir" id="sel_city">
-                                    <option value="">-- Kabupaten / Kota --</option>
-                                    <?php foreach ($kota as $kt) { ?>
-                                        <option <?php if ($pend['idkota'] == $kt['id']) {
-                                                    echo "selected";
-                                                } ?> value=" <?= $kt['id'] ?>"><?= $kt['name'] ?></option>
-                                    <?php } ?>
+                                    <option value="<?= $pend['idkota'] ?>"><?= $pend['name'] ?></option>
                                 </select>
                             </div>
                         </div>

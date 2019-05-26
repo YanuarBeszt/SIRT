@@ -42,10 +42,12 @@ class PembuatanSurat extends CI_Controller
     public function print($surat)
     {
         $warga = $this->input->post('warga');
+        $nosurat = $this->input->post('nosurat');
         $this->Surat_model->save();
         $data =
             [
-                'warga' => $this->Penduduk_model->getById($warga)
+                'warga' => $this->Penduduk_model->getById($warga),
+                'nosurat' => $nosurat
             ];
         $this->load->view('surat/' . $surat, $data);
 

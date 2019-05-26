@@ -22,4 +22,12 @@ class Rekap extends CI_Controller
 
         $this->session->set_userdata('previous_url', current_url());
     }
+
+    public function hapus()
+    {
+        $id = $this->input->post('nosurat');
+        $this->Surat_model->delete($id);
+        $this->session->set_flashdata('success', 'Berhasil Menghapus Rekap surat');
+        redirect(index_page());
+    }
 }

@@ -59,6 +59,7 @@
 
         $(document).on('change', '#sel_prov', function() {
             var regencies = $(this).val();
+            console.log(regencies);
 
             $.ajax({
                 url: 'http://localhost/SIRT/Admin/Tambah_data/KK/getCities',

@@ -3,7 +3,7 @@
 <!-- Custom css print out pdf surat -->
 <link rel="stylesheet" href="<?= base_url('assets/sbadmin2/') ?>css/surat.css">
 
-<body>
+<body onload="window.print()">
     <div id="content" class="container_12 clearfix">
         <div id="content-main" class="grid_7">
             <link href="<?= base_url() ?>assets/sbadmin2/css/surat.css" rel="stylesheet" type="text/css" />

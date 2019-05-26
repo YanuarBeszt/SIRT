@@ -19,7 +19,11 @@ class DetailPenduduk extends CI_Controller
         $data =
             [
                 'isinya' => 'admin/detailpenduduk',
-                'penduduk' => $this->Penduduk_model->getAll()
+                'penduduk' => $this->Penduduk_model->getAll(),
+                'kk' => $this->Kkeluarga_model->jumlahKK(),
+                'pdd' => $this->Penduduk_model->jumlahPdd(),
+                'laki' => $this->Penduduk_model->jumlahLaki(),
+                'balita' => $this->Penduduk_model->jumlahBalita()
             ];
         $this->load->view('view', $data);
 
@@ -30,7 +34,7 @@ class DetailPenduduk extends CI_Controller
     {
         $this->Penduduk_model->delete($nik);
         $this->session->set_flashdata('success', 'Berhasil Menghapus Data Penduduk');
-        $this->index();
+        redirect(index_page());
     }
 
     public function edit($nik)
@@ -53,12 +57,25 @@ class DetailPenduduk extends CI_Controller
         $this->session->set_userdata('previous_url', current_url());
     }
 
+    public function EditKK($id)
+    {
+        $data =
+            [
+                'isinya' => 'admin/edit_kk',
+                'kk' => $this->Kkeluarga_model->getById($id),
+                'provinces' => $this->WilayahDD_model->getProvinces()
+            ];
+        $this->load->view('view', $data);
+
+        $this->session->set_userdata('previous_url', current_url());
+    }
+
     public function Update()
     {
         $penduduk = $this->Penduduk_model;
         $penduduk->update();
         $this->session->set_flashdata('success', 'Berhasil Mengubah Data Penduduk');
-        $this->index();
+        redirect(index_page());
     }
 
     public function GantiPassword($nik)
@@ -93,5 +110,17 @@ class DetailPenduduk extends CI_Controller
             $this->session->set_flashdata('Gagal', 'Password Lama Salah');
             $this->GantiPassword($username);
         }
+    }
+
+    public function DaftarKK()
+    {
+        $data =
+            [
+                'isinya' => 'admin/daftarkk',
+                'isi' => $this->Kkeluarga_model->getAll()
+            ];
+        $this->load->view('view', $data);
+
+        $this->session->set_userdata('previous_url', current_url());
     }
 }
