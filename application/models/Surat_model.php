@@ -24,10 +24,10 @@ class Surat_model extends CI_Model
     //mengambil data surat belum dicetak dari database
     public function suratBelumCetak()
     {
-        $this->db->select('tb_transaksi.id, tb_transaksi.nik, tb_surat.url_surat, tb_penduduk.namaPenduduk, tb_transaksi.tanggal, tb_surat.nama');
+        $this->db->select('tb_transaksi.idTransaksi, tb_transaksi.nik, tb_surat.url_surat, tb_penduduk.namaPenduduk, tb_transaksi.tanggal, tb_surat.nama');
         $this->db->from('tb_transaksi');
         $this->db->join('tb_penduduk', 'tb_transaksi.nik=tb_penduduk.nik', 'left');
-        $this->db->join('tb_surat', 'tb_transaksi.idsurat=tb_surat.id', 'left');
+        $this->db->join('tb_surat', 'tb_transaksi.idsurat=tb_surat.idSurat', 'left');
         $this->db->where(["status" => "1"]);
         $query = $this->db->get();
         return $query->result();
@@ -45,7 +45,7 @@ class Surat_model extends CI_Model
 
     public function getTrans()
     {
-        $this->db->select_max('id');
+        $this->db->select_max('idTransaksi');
         $query  = $this->db->get('tb_transaksi');
         return $query->row_array();
     }
@@ -53,7 +53,7 @@ class Surat_model extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->id = $post["nosurat"];
+        $this->idTransaksi = $post["nosurat"];
         $this->nik = $post["warga"];
         $this->idsurat = $post["idsurat"];
         $this->tanggal = $post["tanggal"];
@@ -66,11 +66,11 @@ class Surat_model extends CI_Model
     {
         $post = $this->input->post();
         $this->status = $post["status"];
-        $this->db->update('tb_transaksi', $this, array('id' => $post['nosurat']));
+        $this->db->update('tb_transaksi', $this, array('idTransaksi' => $post['nosurat']));
     }
 
     public function delete($id)
     {
-        return $this->db->delete('tb_transaksi', array("id" => $id));
+        return $this->db->delete('tb_transaksi', array("idTransaksi" => $id));
     }
 }

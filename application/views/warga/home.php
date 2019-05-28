@@ -1,3 +1,10 @@
+<!-- alerl success save -->
+<?php if ($this->session->flashdata('success')) : ?>
+    <div class="alert alert-success" role="alert">
+        <?php echo $this->session->flashdata('success'); ?>
+    </div>
+<?php endif; ?>
+
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Home</h1>
@@ -25,13 +32,12 @@
                             <tr>
                                 <td><?= $no ?></td>
                                 <td><?= $srt->nama; ?></td>
-                                <?php $id = $srt->id; ?>
-                                <td><?= '<a href ="http://localhost/SIRT/Admin/PembuatanSurat/buatSurat" class="btn btn-success">
-                                <span class="icon text-white">
-                                    <i class="fas fa-print"></i>
-                                    </ span>
-                                    <span class="text">Buat Surat</span>
-                                    </a>' ?></td>
+                                <td><a href="<?= base_url() ?>Warga/PembuatanSurat/index/<?= $srt->url_surat ?>" class="btn btn-success">
+                                        <span class="icon text-white">
+                                            <i class="fas fa-print"></i>
+                                        </span>
+                                        <span class="text">Buat Surat</span>
+                                    </a></td>
                                 <?php $no++ ?>
                             </tr>
                         </tbody>

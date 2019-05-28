@@ -73,10 +73,10 @@ class Kkeluarga_model extends CI_Model
         // return $this->db->get_where($this->_table, ["nik" => $id])->row_array();
         $this->db->from('tb_penduduk');
         $this->db->join('tb_kk', 'tb_kk.nokk=tb_penduduk.nokk', 'left');
-        $this->db->join('provinces', 'provinces.id=tb_kk.idProvinsi', 'left');
-        $this->db->join('regencies', 'regencies.id=tb_kk.idKabupaten', 'left');
-        $this->db->join('districts', 'districts.id=tb_kk.idKecamatan', 'left');
-        $this->db->join('villages', 'villages.id=tb_kk.idkelurahan', 'left');
+        $this->db->join('provinces', 'provinces.idProvinces=tb_kk.idProvinsi', 'left');
+        $this->db->join('regencies', 'regencies.idRegencies=tb_kk.idKabupaten', 'left');
+        $this->db->join('districts', 'districts.idDistrics=tb_kk.idKecamatan', 'left');
+        $this->db->join('villages', 'villages.idVillages=tb_kk.idkelurahan', 'left');
         $this->db->where('idstatusKlg=1');
         $query = $this->db->get();
         return $query->result();
@@ -88,10 +88,10 @@ class Kkeluarga_model extends CI_Model
         $this->db->select('tb_kk.nokk, tb_kk.alamat, tb_kk.alamat, tb_kk.kodepos, tb_kk.rt, tb_kk.rw, tb_kk.idProvinsi, provinces.name AS prov, tb_kk.idKabupaten AS idkota, regencies.name AS kab, tb_kk.idKecamatan, districts.name AS kec, tb_kk.idkelurahan, villages.name AS kel');
         // return $this->db->get_where($this->_table, ["nik" => $id])->row_array();
         $this->db->from('tb_kk');
-        $this->db->join('provinces', 'provinces.id=tb_kk.idProvinsi', 'left');
-        $this->db->join('regencies', 'regencies.id=tb_kk.idKabupaten', 'left');
-        $this->db->join('districts', 'districts.id=tb_kk.idKecamatan', 'left');
-        $this->db->join('villages', 'villages.id=tb_kk.idkelurahan', 'left');
+        $this->db->join('provinces', 'provinces.idProvinces=tb_kk.idProvinsi', 'left');
+        $this->db->join('regencies', 'regencies.idRegencies=tb_kk.idKabupaten', 'left');
+        $this->db->join('districts', 'districts.idDistrics=tb_kk.idKecamatan', 'left');
+        $this->db->join('villages', 'villages.idVillages=tb_kk.idkelurahan', 'left');
         $this->db->where("nokk='$id'");
         $query = $this->db->get();
         return $query->row_array();
@@ -228,10 +228,10 @@ class Kkeluarga_model extends CI_Model
         $this->rt = $post["rt"];
         $this->rw = $post["rw"];
         $this->idProvinsi = $post["idProvinsi"];
-        $this->idKabupateb = $post["idKabupaten"];
+        $this->idKabupaten = $post["idKabupaten"];
         $this->idKecamatan = $post["idKecamatan"];
         $this->idkelurahan = $post["idkelurahan"];
-        $this->db->insert($this->_table, $this, array('nokk' => $post['nokk']));
+        $this->db->update($this->_table, $this, array('nokk' => $post['nokk']));
     }
 
     //delete data sesuai dengan id

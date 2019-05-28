@@ -33,7 +33,7 @@
                             ?>
                             <tbody>
                                 <tr>
-                                    <td><?= $srt->id; ?></td>
+                                    <td><?= $srt->idTransaksi; ?></td>
                                     <td><?= $srt->namaPenduduk; ?></td>
                                     <td><?= $srt->nama; ?></td>
                                     <td><?= $srt->tanggal; ?></td>

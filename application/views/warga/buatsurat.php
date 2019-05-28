@@ -23,7 +23,7 @@ if ($no == null) {
         </div>
         <div class="card-body">
             <?php $uri = $this->uri->segment(4); ?>
-            <form action="<?php echo base_url() . 'Admin/PembuatanSurat/print/' . $uri; ?>" method="post" target="_blank">
+            <form action="<?php echo base_url() . 'Warga/PembuatanSurat/print/' . $uri; ?>" method="post">
                 <div class="row clear-fix">
                     <div class="col-sm-4">
                         <div class="form-group form-float">
@@ -49,11 +49,8 @@ if ($no == null) {
                         <div class="form-group form-float">
                             <div class="form-line">
                                 <label class="form-label">Peminta Surat</label>
-                                <select class="form-control show-tick" name="warga" id="warga">
-                                    <option value="">-- Pilih Warga --</option>
-                                    <?php foreach ($warga as $wg) { ?>
-                                        <option value="<?= $wg->nik ?>"><?= $wg->nokk ?> - <?= $wg->namaPenduduk ?></option>
-                                    <? } ?>
+                                <select class="form-control show-tick" name="warga" id="warga" readonly>
+                                    <option value="<?= $pend['nik']; ?>"><?= $pend['namaPenduduk']; ?></option>
                                 </select>
                             </div>
                         </div>
@@ -72,7 +69,7 @@ if ($no == null) {
                     </div>
                 </div>
                 <div class="text-right col-12">
-                    <input class="btn btn-success" type="submit" name="btn" value="Print" />
+                    <input class="btn btn-success" type="submit" name="btn" value="Cek Surat" />
                 </div>
             </form>
         </div>

@@ -3,8 +3,10 @@
 <!-- Custom css print out pdf surat -->
 <link rel="stylesheet" href="<?= base_url('assets/sbadmin2/') ?>css/surat.css">
 
-<body onload="window.print()">
-    <div id="content" class="container_12 clearfix">
+<body <?php if ($this->session->userdata('statusPdd') == 1) {
+            echo 'onload="window.print()"';
+        } ?>>
+    <div id="content" class="container_12 clearfix page">
         <div id="content-main" class="grid_7">
             <link href="<?= base_url() ?>assets/sbadmin2/css/surat.css" rel="stylesheet" type="text/css" />
             <div>
@@ -24,6 +26,19 @@
                         </u></div>
                     <div align="center">
                         <h4 class="kop3">Nomor : <?= $nosurat ?></h4>
+                        <?php if ($this->session->userdata('statusPdd') == 2) { ?>
+                            <form action="<?php echo base_url() . 'Warga/PembuatanSurat/simpan/'; ?>" method="post">
+                                <?php $tgl = date('Y-m-d'); ?>
+                                <input type="hidden" class="form-control" name="ket" id="ket" value="-">
+                                <input type="hidden" class="form-control" name="idsurat" id="idsurat" value="<?= $id ?>">
+                                <input type="hidden" class="form-control" name="status" id="status" value="1">
+                                <input type="hidden" class="form-control" name="nosurat" id="nosurat" value="<?= $nosurat ?>">
+                                <input type="hidden" class="form-control" name="tanggal" id="tanggal" value="<?= $tgl ?>">
+                                <input type="hidden" name="warga" value="<?= $warga['nik']; ?>">
+                                <input class="btnn" type="submit" name="btn" value="Kirim Surat KeRT" />
+                            </form>
+                            <a class="btnn" href="<?= base_url('Viewp') ?>"><button>Batal Ajukan Surat</button></a>
+                        <?php } ?>
                     </div>
                 </table>
                 <div class="clear"></div>
@@ -32,7 +47,8 @@
                         <td class="indentasi">Yang bertanda tangan dibawah ini Ketua RT 004 RW 007 Kelurahan Sumbersari Kecamatan Sumbersari Kabupaten Jember, Provinsi dengan ini menerangkan dengan sebenarnya bahwa: </td>
                         </tr>
                     </table>
-                    <tr></tr>
+                    <tr>
+                    </tr>
                     <tr></tr>
                     <tr></tr>
                     <table width="100%">

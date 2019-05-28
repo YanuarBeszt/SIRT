@@ -31,13 +31,13 @@
                         <tbody>
                             <?php foreach ($surat as $srt) : ?>
                                 <tr>
-                                    <td><?= $srt->id; ?></td>
+                                    <td><?= $srt->idTransaksi; ?></td>
                                     <td><?= $srt->namaPenduduk; ?></td>
                                     <td><?= $srt->nama; ?></td>
                                     <td><?= $srt->tanggal; ?></td>
                                     <td>
                                         <form action="<?= base_url() ?>View/print/<?= $srt->url_surat ?>/<?= $srt->nik ?>" method="post" target="_blank">
-                                            <input type="hidden" name="nosurat" value="<?= $srt->id; ?>">
+                                            <input type="hidden" name="nosurat" value="<?= $srt->idTransaksi; ?>">
                                             <input type="hidden" name="status" value="2">
                                             <input class="btn btn-success" type="submit" name="btn" value="Print" />
                                         </form>

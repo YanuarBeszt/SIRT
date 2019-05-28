@@ -68,9 +68,9 @@
                                 <Select class="form-control show-tick" name="idstatusKlg">
                                     <option value="">-- Hubungan Kekeluargaan --</option>
                                     <?php foreach ($hubkk as $hk) { ?>
-                                        <option <?php if ($pend['idstatusKlg'] == $hk['id']) {
+                                        <option <?php if ($pend['idstatusKlg'] == $hk['idstatusKlg']) {
                                                     echo "selected";
-                                                } ?> value=" <?= $hk['id'] ?>"><?= $hk['ket'] ?></option>
+                                                } ?> value=" <?= $hk['idstatusKlg'] ?>"><?= $hk['ket'] ?></option>
                                     <?php } ?>
                                 </Select>
                             </div>
@@ -98,9 +98,9 @@
                                         $split = str_split($pend['idkota']);
                                         $datasplit = ($split[0] . $split[1]);
                                         ?>
-                                        <option <?php if ($datasplit == $prov['id']) {
+                                        <option <?php if ($datasplit == $prov['idProvinces']) {
                                                     echo "selected";
-                                                } ?> value=" <?= $prov['id'] ?>"><?= $prov['name'] ?></option>
+                                                } ?> value=" <?= $prov['idProvinces'] ?>"><?= $prov['name'] ?></option>
                                     <?php } ?>
                                 </Select>
                             </div>
@@ -108,9 +108,9 @@
                                 <select class="form-control show-tick" name="tempatLahir" id="sel_city">
                                     <option value="">-- Kabupaten / Kota --</option>
                                     <?php foreach ($kota as $kt) { ?>
-                                        <option <?php if ($pend['idkota'] == $kt['id']) {
+                                        <option <?php if ($pend['idkota'] == $kt['idRegencies']) {
                                                     echo "selected";
-                                                } ?> value=" <?= $kt['id'] ?>"><?= $kt['name'] ?></option>
+                                                } ?> value=" <?= $kt['idRegencies'] ?>"><?= $kt['name'] ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -125,9 +125,9 @@
                                 <Select class="form-control show-tick" name="idAgama">
                                     <option value="">-- Agama --</option>
                                     <?php foreach ($agama as $ag) { ?>
-                                        <option <?php if ($pend['idagama'] == $ag['id']) {
+                                        <option <?php if ($pend['idagama'] == $ag['idAgama']) {
                                                     echo "selected";
-                                                } ?> value=" <?= $ag['id'] ?>"><?= $ag['nama_agama'] ?></option>
+                                                } ?> value=" <?= $ag['idAgama'] ?>"><?= $ag['nama_agama'] ?></option>
                                     <?php } ?>
                                 </Select>
                             </div>
@@ -142,9 +142,9 @@
                                 <Select class="form-control show-tick" name="idkwn">
                                     <option value="">-- Kewarganegaraan --</option>
                                     <?php foreach ($negaraan as $ng) { ?>
-                                        <option <?php if ($pend['idtemla'] == $ng['id']) {
+                                        <option <?php if ($pend['idtemla'] == $ng['idKwn']) {
                                                     echo "selected";
-                                                } ?> value=" <?= $ng['id'] ?>"><?= $ng['country_name'] ?></option>
+                                                } ?> value=" <?= $ng['idKwn'] ?>"><?= $ng['country_name'] ?></option>
                                     <?php } ?>
                                 </Select>
                             </div>
@@ -159,9 +159,9 @@
                                 <Select class="form-control show-tick" name="idPendidikan">
                                     <option value="">-- Pendidikan --</option>
                                     <?php foreach ($pendidikan as $pdd) { ?>
-                                        <option <?php if ($pend['idpendidikan'] == $pdd['id']) {
+                                        <option <?php if ($pend['idpendidikan'] == $pdd['idPendidikan']) {
                                                     echo "selected";
-                                                } ?> value=" <?= $pdd['id'] ?>"><?= $pdd['nama_pendidikan'] ?></option>
+                                                } ?> value=" <?= $pdd['idPendidikan'] ?>"><?= $pdd['nama_pendidikan'] ?></option>
                                     <?php } ?>
                                 </Select>
                             </div>
@@ -176,9 +176,9 @@
                                 <Select class="form-control show-tick" name="idPekerjaan">
                                     <option value="">-- Pekerjaan --</option>
                                     <?php foreach ($pekerjaan as $pkj) { ?>
-                                        <option <?php if ($pend['idpekerjaan'] == $pkj['id']) {
+                                        <option <?php if ($pend['idpekerjaan'] == $pkj['idPekerjaan']) {
                                                     echo "selected";
-                                                } ?> value=" <?= $pkj['id'] ?>"><?= $pkj['nama_pekerjaan'] ?></option>
+                                                } ?> value=" <?= $pkj['idPekerjaan'] ?>"><?= $pkj['nama_pekerjaan'] ?></option>
                                     <?php } ?>
                                 </Select>
                             </div>
@@ -193,9 +193,9 @@
                                 <Select class="form-control show-tick" name="idstatusPkw">
                                     <option value="">-- Status Perkawinan --</option>
                                     <?php foreach ($perkawinan as $pkw) { ?>
-                                        <option <?php if ($pend['idstatusPkw'] == $pkw['id']) {
+                                        <option <?php if ($pend['idstatusPkw'] == $pkw['idstatusPkw']) {
                                                     echo "selected";
-                                                } ?> value=" <?= $pkw['id'] ?>"><?= $pkw['ket'] ?></option>
+                                                } ?> value=" <?= $pkw['idstatusPkw'] ?>"><?= $pkw['ket'] ?></option>
                                     <?php } ?>
                                 </Select>
                             </div>

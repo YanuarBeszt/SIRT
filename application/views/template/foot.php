@@ -75,7 +75,7 @@
 
                     var list = $("#sel_city");
                     $.each(response, function(index, item) {
-                        list.append(new Option(item.name, item.id));
+                        list.append(new Option(item.name, item.idRegencies));
                     });
 
 
@@ -103,7 +103,7 @@
 
                     var list = $("#sel_dist");
                     $.each(response, function(index, item) {
-                        list.append(new Option(item.name, item.id));
+                        list.append(new Option(item.name, item.idDistrics));
                     });
                 }
             });
@@ -129,7 +129,7 @@
 
                     var list = $("#sel_vill");
                     $.each(response, function(index, item) {
-                        list.append(new Option(item.name, item.id));
+                        list.append(new Option(item.name, item.idVillages));
                     });
                 }
             });

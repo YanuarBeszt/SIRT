@@ -111,14 +111,14 @@ class Penduduk_model extends CI_Model
         $this->db->select('tb_penduduk.nokk, tb_penduduk.nik, tb_penduduk.namaPenduduk, tb_penduduk.tanggalLahir, tb_kelamin.ket AS kelamin, name, nama_agama, nama_pendidikan, nama_pekerjaan, country_name,tb_statusKlg.ket AS klg, tb_statusPkw.ket AS pkw');
         // return $this->db->get_where($this->_table, ["nik" => $id])->row_array();
         $this->db->from('tb_penduduk');
-        $this->db->join($this->_tbKelamin, 'tb_kelamin.id=tb_penduduk.idkelamin', 'left');
-        $this->db->join($this->_tbRegency, 'regencies.id=tb_penduduk.tempatLahir', 'left');
-        $this->db->join($this->_tbAgama, 'tb_agama.id=tb_penduduk.idAgama', 'left');
-        $this->db->join($this->_tbpendidikan, 'tb_pendidikan.id=tb_penduduk.idPendidikan', 'left');
-        $this->db->join($this->_tbPekerjaan, 'tb_pekerjaan.id=tb_penduduk.idPekerjaan', 'left');
-        $this->db->join($this->_tbKwn, 'tb_kwn.id=tb_penduduk.idkwn', 'left');
-        $this->db->join($this->_tbKlg, 'tb_statusKlg.id=tb_penduduk.idstatusKlg', 'left');
-        $this->db->join($this->_tbPkw, 'tb_statusPkw.id=tb_penduduk.idstatusPkw', 'left');
+        $this->db->join($this->_tbKelamin, 'tb_kelamin.idKelamin=tb_penduduk.idkelamin', 'left');
+        $this->db->join($this->_tbRegency, 'regencies.idRegencies=tb_penduduk.tempatLahir', 'left');
+        $this->db->join($this->_tbAgama, 'tb_agama.idAgama=tb_penduduk.idAgama', 'left');
+        $this->db->join($this->_tbpendidikan, 'tb_pendidikan.idPendidikan=tb_penduduk.idPendidikan', 'left');
+        $this->db->join($this->_tbPekerjaan, 'tb_pekerjaan.idPekerjaan=tb_penduduk.idPekerjaan', 'left');
+        $this->db->join($this->_tbKwn, 'tb_kwn.idKwn=tb_penduduk.idkwn', 'left');
+        $this->db->join($this->_tbKlg, 'tb_statusKlg.idstatusKlg=tb_penduduk.idstatusKlg', 'left');
+        $this->db->join($this->_tbPkw, 'tb_statusPkw.idstatusPkw=tb_penduduk.idstatusPkw', 'left');
         $query = $this->db->get();
         return $query->result();
     }
@@ -153,16 +153,16 @@ class Penduduk_model extends CI_Model
     //mengambil data sesuai id dari databse
     public function getById($id)
     {
-        $this->db->select('tb_penduduk.nokk, tb_penduduk.nik, tb_penduduk.namaPenduduk, tb_penduduk.tanggalLahir,tb_kelamin.id AS idkelamin, tb_kelamin.ket AS kelamin,regencies.id AS idkota, name,tb_agama.id AS idagama, nama_agama,tb_pendidikan.id AS idpendidikan, nama_pendidikan, tb_pekerjaan.id AS idpekerjaan, nama_pekerjaan,tb_kwn.id AS idtemla, country_name,tb_statusKlg.id AS idstatusKlg, tb_statusKlg.ket AS klg,tb_penduduk.idstatusPdd, tb_statusPkw.id AS idstatusPkw, tb_statusPkw.ket AS pkw, tb_penduduk.password');
+        $this->db->select('tb_penduduk.nokk, tb_penduduk.nik, tb_penduduk.namaPenduduk, tb_penduduk.tanggalLahir,tb_kelamin.idKelamin AS idkelamin, tb_kelamin.ket AS kelamin,regencies.idRegencies AS idkota, name,tb_agama.idAgama AS idagama, nama_agama,tb_pendidikan.idPendidikan AS idpendidikan, nama_pendidikan, tb_pekerjaan.idPekerjaan AS idpekerjaan, nama_pekerjaan,tb_kwn.idKwn AS idtemla, country_name,tb_statusKlg.idstatusKlg AS idstatusKlg, tb_statusKlg.ket AS klg,tb_penduduk.idstatusPdd, tb_statusPkw.idstatusPkw AS idstatusPkw, tb_statusPkw.ket AS pkw, tb_penduduk.password');
         $this->db->from('tb_penduduk');
-        $this->db->join($this->_tbKelamin, 'tb_kelamin.id=tb_penduduk.idkelamin', 'left');
-        $this->db->join($this->_tbRegency, 'regencies.id=tb_penduduk.tempatLahir', 'left');
-        $this->db->join($this->_tbAgama, 'tb_agama.id=tb_penduduk.idAgama', 'left');
-        $this->db->join($this->_tbpendidikan, 'tb_pendidikan.id=tb_penduduk.idPendidikan', 'left');
-        $this->db->join($this->_tbPekerjaan, 'tb_pekerjaan.id=tb_penduduk.idPekerjaan', 'left');
-        $this->db->join($this->_tbKwn, 'tb_kwn.id=tb_penduduk.idkwn', 'left');
-        $this->db->join($this->_tbKlg, 'tb_statusKlg.id=tb_penduduk.idstatusKlg', 'left');
-        $this->db->join($this->_tbPkw, 'tb_statusPkw.id=tb_penduduk.idstatusPkw', 'left');
+        $this->db->join($this->_tbKelamin, 'tb_kelamin.idKelamin=tb_penduduk.idkelamin', 'left');
+        $this->db->join($this->_tbRegency, 'regencies.idRegencies=tb_penduduk.tempatLahir', 'left');
+        $this->db->join($this->_tbAgama, 'tb_agama.idAgama=tb_penduduk.idAgama', 'left');
+        $this->db->join($this->_tbpendidikan, 'tb_pendidikan.idPendidikan=tb_penduduk.idPendidikan', 'left');
+        $this->db->join($this->_tbPekerjaan, 'tb_pekerjaan.idPekerjaan=tb_penduduk.idPekerjaan', 'left');
+        $this->db->join($this->_tbKwn, 'tb_kwn.idKwn=tb_penduduk.idkwn', 'left');
+        $this->db->join($this->_tbKlg, 'tb_statusKlg.idstatusKlg=tb_penduduk.idstatusKlg', 'left');
+        $this->db->join($this->_tbPkw, 'tb_statusPkw.idstatusPkw=tb_penduduk.idstatusPkw', 'left');
         $this->db->where(["nik" => $id]);
         $query = $this->db->get();
         return $query->row_array();

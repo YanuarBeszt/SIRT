@@ -73,8 +73,8 @@
                                             <span class="text">Pilih Aksi</span>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deleteModal">Hapus ?</a>
-                                            <a class="dropdown-item " href="http://localhost/SIRT/Admin/DetailPenduduk/EditKK/<?= $id ?>">Edit ?</a>
+                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deleteModall">Hapus ?</a>
+                                            <a class="dropdown-item " href="<?= base_url() ?>/Admin/DetailPenduduk/EditKK/<?= $id ?>">Edit ?</a>
                                         </div>
                                     </div>
                                 </td>
@@ -90,7 +90,7 @@
 
 
 <!-- Delete Modal-->
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModall" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -102,7 +102,7 @@
             <div class="modal-body">Tekan Hapus jika yakin.</div>
             <div class="modal-footer">
                 <button class="btn btn-primary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-warning" href="http://localhost/SIRT/Admin/DetailPenduduk/hapus/<?= $id ?>">Hapus</a>
+                <a class="btn btn-warning" href="<?= base_url() ?>/Admin/DetailPenduduk/HapusKK/<?= $id ?>">Hapus</a>
             </div>
         </div>
     </div>

@@ -37,6 +37,6 @@ class Penduduk extends CI_Controller
         $penduduk = $this->Penduduk_model;
         $penduduk->save();
         $this->session->set_flashdata('success', 'Berhasil menambahkan Penduduk');
-        redirect(index_page());
+        $this->index();
     }
 }

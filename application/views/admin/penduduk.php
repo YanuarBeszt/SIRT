@@ -76,7 +76,7 @@
                                 <Select class="form-control show-tick" name="idstatusKlg" required>
                                     <option value="">-- Hubungan Kekeluargaan --</option>
                                     <?php foreach ($hubkk as $hk) { ?>
-                                        <option value=" <?= $hk['id'] ?>"><?= $hk['ket'] ?></option>
+                                        <option value=" <?= $hk['idstatusKlg'] ?>"><?= $hk['ket'] ?></option>
                                     <?php } ?>
                                 </Select>
                             </div>
@@ -104,7 +104,7 @@
                                             <option value="">-- Provinsi --</option>
                                             <?php
                                             foreach ($provinces as $prov) {
-                                                echo "<option value='" . $prov['id'] . "'>" . $prov['name'] . "</option>";
+                                                echo "<option value='" . $prov['idProvinces'] . "'>" . $prov['name'] . "</option>";
                                             }
                                             ?>
                                         </Select>
@@ -128,7 +128,7 @@
                                     <option value="">-- Agama --</option>
                                     <?php
                                     foreach ($agama as $ag) {
-                                        echo "<option value='" . $ag['id'] . "'>" . $ag['nama_agama'] . "</option>";
+                                        echo "<option value='" . $ag['idAgama'] . "'>" . $ag['nama_agama'] . "</option>";
                                     }
                                     ?>
                                 </Select>
@@ -145,7 +145,7 @@
                                     <option value="">-- Kewarganegaraan --</option>
                                     <?php
                                     foreach ($negaraan as $kwn) {
-                                        echo "<option value='" . $kwn['id'] . "'>" . $kwn['country_name'] . "</option>";
+                                        echo "<option value='" . $kwn['idKwn'] . "'>" . $kwn['country_name'] . "</option>";
                                     }
                                     ?>
                                 </Select>
@@ -162,7 +162,7 @@
                                     <option value="">-- Pendidikan --</option>
                                     <?php
                                     foreach ($pendidikan as $pdd) {
-                                        echo "<option value='" . $pdd['id'] . "'>" . $pdd['nama_pendidikan'] . "</option>";
+                                        echo "<option value='" . $pdd['idPendidikan'] . "'>" . $pdd['nama_pendidikan'] . "</option>";
                                     }
                                     ?>
                                 </Select>
@@ -179,7 +179,7 @@
                                     <option value="">-- Pekerjaan --</option>
                                     <?php
                                     foreach ($pekerjaan as $pkj) {
-                                        echo "<option value='" . $pkj['id'] . "'>" . $pkj['nama_pekerjaan'] . "</option>";
+                                        echo "<option value='" . $pkj['idPekerjaan'] . "'>" . $pkj['nama_pekerjaan'] . "</option>";
                                     }
                                     ?>
                                 </Select>
@@ -196,7 +196,7 @@
                                     <option value="">-- Status Perkawinan --</option>
                                     <?php
                                     foreach ($perkawinan as $pkw) {
-                                        echo "<option value='" . $pkw['id'] . "'>" . $pkw['ket'] . "</option>";
+                                        echo "<option value='" . $pkw['idstatusPkw'] . "'>" . $pkw['ket'] . "</option>";
                                     }
                                     ?>
                                 </Select>

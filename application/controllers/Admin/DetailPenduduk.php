@@ -30,11 +30,31 @@ class DetailPenduduk extends CI_Controller
         $this->session->set_userdata('previous_url', current_url());
     }
 
+    public function DaftarKK()
+    {
+        $data =
+            [
+                'isinya' => 'admin/daftarkk',
+                'isi' => $this->Kkeluarga_model->getAll()
+            ];
+        $this->load->view('view', $data);
+
+        $this->session->set_userdata('previous_url', current_url());
+    }
+
     public function Hapus($nik)
     {
         $this->Penduduk_model->delete($nik);
         $this->session->set_flashdata('success', 'Berhasil Menghapus Data Penduduk');
         redirect(index_page());
+    }
+
+    public function HapusKK($nokk)
+    {
+        $this->Kkeluarga_model->delete($nokk);
+        $this->session->set_flashdata('success', 'Berhasil Menghapus Data Kartu Keluarga');
+        $previous_url = $this->session->userdata('previous_url');
+        redirect($previous_url);
     }
 
     public function edit($nik)
@@ -70,12 +90,20 @@ class DetailPenduduk extends CI_Controller
         $this->session->set_userdata('previous_url', current_url());
     }
 
+    public function UpdateKK()
+    {
+        $kk = $this->Kkeluarga_model;
+        $kk->update();
+        $this->session->set_flashdata('success', 'Berhasil Mengubah Data Kartu Keluarga');
+        $this->DaftarKK();
+    }
+
     public function Update()
     {
         $penduduk = $this->Penduduk_model;
         $penduduk->update();
         $this->session->set_flashdata('success', 'Berhasil Mengubah Data Penduduk');
-        redirect(index_page());
+        $this->index();
     }
 
     public function GantiPassword($nik)
@@ -110,17 +138,5 @@ class DetailPenduduk extends CI_Controller
             $this->session->set_flashdata('Gagal', 'Password Lama Salah');
             $this->GantiPassword($username);
         }
-    }
-
-    public function DaftarKK()
-    {
-        $data =
-            [
-                'isinya' => 'admin/daftarkk',
-                'isi' => $this->Kkeluarga_model->getAll()
-            ];
-        $this->load->view('view', $data);
-
-        $this->session->set_userdata('previous_url', current_url());
     }
 }

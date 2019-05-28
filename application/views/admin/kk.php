@@ -82,7 +82,7 @@
                             <option value="">-- Provinsi --</option>
                             <?php
                             foreach ($provinces as $prov) {
-                                echo "<option value='" . $prov['id'] . "'>" . $prov['name'] . "</option>";
+                                echo "<option value='" . $prov['idProvinces'] . "'>" . $prov['name'] . "</option>";
                             }
                             ?>
                         </select>

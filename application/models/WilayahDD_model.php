@@ -23,7 +23,7 @@ class WilayahDD_model extends CI_Model
         $response = array();
 
         // Select record
-        $this->db->select('id,name');
+        $this->db->select('idRegencies,name');
         $this->db->where('province_id', $postData);
         $q = $this->db->get('regencies');
 
@@ -38,7 +38,7 @@ class WilayahDD_model extends CI_Model
         $response = array();
 
         // Select record
-        $this->db->select('id,name');
+        $this->db->select('idRegencies,name');
         $q = $this->db->get('regencies');
 
         $response = $q->result_array();
@@ -52,7 +52,7 @@ class WilayahDD_model extends CI_Model
         $response = array();
 
         // Select record
-        $this->db->select('id,name');
+        $this->db->select('idDistrics,name');
         $this->db->where('regency_id', $postData);
         $q = $this->db->get('districts');
         $response = $q->result_array();
@@ -66,7 +66,7 @@ class WilayahDD_model extends CI_Model
         $response = array();
 
         // Select record
-        $this->db->select('id,name');
+        $this->db->select('idVillages,name');
         $this->db->where('district_id', $postData);
         $q = $this->db->get('villages');
         $response = $q->result_array();

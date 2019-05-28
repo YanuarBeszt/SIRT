@@ -73,7 +73,7 @@ class KK extends CI_Controller
             $kk->save();
             $this->session->set_flashdata('success', 'Berhasil menambahkan KK');
         }
-        redirect(index_page());
+        $this->index();
     }
 
     public function Edit($id)

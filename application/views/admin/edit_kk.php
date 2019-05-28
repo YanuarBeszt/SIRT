@@ -9,10 +9,10 @@
     <!-- Basic Card Example -->
     <div class="card shadow mb-4 col-12">
         <div class="card-header">
-            <h6 class="m-1 font-weight-bold text-primary">Edit Kartu Keluarga</h6>
+            <h6 class="m-1 font-weight-bold text-primary"><a href="<?= base_url() ?>Admin/DetailPenduduk/DaftarKK">Daftar KK </a>- Edit Kartu Keluarga</h6>
         </div>
         <div class="card-body">
-            <form action="<?= base_url() ?>Admin/DetailPenduduk/SimpanKK" method="post">
+            <form action="<?= base_url() ?>Admin/DetailPenduduk/UpdateKK" method="post">
                 <div class="row clearfix">
                     <div class="col-sm-4">
                         <div class="form-group form-float">
@@ -64,8 +64,8 @@
                             <?php foreach ($provinces as $prov) {
                                 $split = str_split($kk['idkota']);
                                 $datasplit = ($split[0] . $split[1]);
-                                echo '<option ' . (($datasplit == $prov[id]) ? 'selected' : "") . '
-                                        value="' . $prov['id'] . '">' . $prov['name'] . '</option>';
+                                echo '<option ' . (($datasplit == $prov['idProvinces']) ? 'selected' : "") . '
+                                        value="' . $prov['idProvinces'] . '">' . $prov['name'] . '</option>';
                             } ?>
                         </select>
                     </div>
@@ -86,7 +86,19 @@
                     </div>
                 </div>
                 <br>
-                <input class="btn btn-success" type="submit" name="btn" value="Simpan" />
+                <div class="row clearfix">
+                    <div class="text-left col-sm-7">
+                        <a href="<?= base_url() ?>Admin/DetailPenduduk/DaftarKK" class="btn btn-danger btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-window-close"></i>
+                            </span>
+                            <span class="text">Batal</span>
+                        </a>
+                    </div>
+                    <div class="text-right col-sm-5">
+                        <input class="btn btn-success" type="submit" name="btn" value="Simpan" />
+                    </div>
+                </div>
             </form>
         </div>
     </div>
