@@ -4,7 +4,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon ">
-            <img class="img-profile rounded-circle" src="<?= base_url('assets/sbadmin2/') ?>img/inst.png">
+            <img class="img-profile rounded-circle" src="<?= base_url('assets/sbadmin2/') ?>img/insti.png">
         </div>
         <div class="sidebar-brand-text mx-4">S I R T</div>
     </a>

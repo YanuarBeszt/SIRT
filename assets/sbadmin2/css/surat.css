@@ -12,7 +12,7 @@ body {
   background-color: #4caf50; /* Green */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 5px 12px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -29,7 +29,7 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 hr {
-  border-bottom: 4px solid #000000;
+  border: 3px solid #000000;
   height: 0px;
 }
 table,
@@ -45,63 +45,78 @@ td {
 }
 
 .kop {
-  font-size: 24px;
+  font-size: 12pt;
+  font-family: "Times New Roman", Times, serif;
   text-align: center;
   line-height: 0.1;
-  margin: 22px;
-}
-
-.kop3 {
-  font-size: 18px;
-  text-align: center;
-  line-height: 0.1;
-  margin: 22px;
+  margin: 21px;
 }
 
 .kop2 {
-  font-size: 14px;
-  font-weight: normal;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 11pt;
   text-align: center;
   line-height: 0.1;
-  margin: 10px;
+  margin: 15px;
+}
+
+.kop3 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16pt;
+  text-align: center;
+  line-height: 0.1;
+  margin: 21px;
 }
 
 .header {
+  padding-bottom: 6px;
   padding-top: 1px;
   text-align: center;
-  height: 110px;
+  height: 120px;
 }
 
-.logo {
+.logoo {
+  position: absolute;
   float: left;
   margin-top: 8px;
   margin-left: 5px;
-  width: 90px;
+  width: 70px;
   height: 90px;
+  z-index: 2;
 }
 
 #isi {
+  font-family: "Times New Roman", Times, serif;
   line-height: 0.1;
   vertical-align: top;
 }
 
 #isi2 {
+  font-family: "Times New Roman", Times, serif;
   line-height: 0.8;
   vertical-align: top;
 }
 #isi3 {
   line-height: 1;
+  font-family: "Times New Roman", Times, serif;
   vertical-align: top;
 }
 
-#isi3 td {
+#isi3 {
   line-height: 1.2;
   vertical-align: top;
+  font-family: "Times New Roman", Times, serif;
   text-align: justify;
 }
 
+.isian {
+  padding-bottom: 10px;
+}
+
 .indentasi {
-  text-indent: 40px;
+  text-indent: 12pt;
+  padding-bottom: 10px;
+  font-family: "Times New Roman", Times, serif;
   line-height: 1.2;
   text-align: justify;
 }
@@ -116,18 +131,23 @@ td {
 
 h1 {
   font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
 }
 h3 {
   font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
 }
 h4 {
   font-size: 14px;
+  font-family: "Times New Roman", Times, serif;
 }
 h5 {
   font-size: 13px;
+  font-family: "Times New Roman", Times, serif;
 }
 label {
   display: inline-block;
+  font-family: "Times New Roman", Times, serif;
 }
 .nowrap {
   white-space: nowrap;
@@ -135,17 +155,18 @@ label {
 #body {
   padding: 0px;
 }
+
+table {
+  font-family: "Times New Roman", Times, serif;
+}
+
 #ktp {
   width: 500px;
   margin: 0px;
   border: 2px solid #000;
   padding: 5px;
 }
-.header {
-  border-bottom: 2px solid #000;
-  padding-bottom: 5px;
-  margin: -5px auto;
-}
+
 @page {
   size: A4;
   margin: 0;

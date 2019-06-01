@@ -39,6 +39,20 @@ class PembuatanSurat extends CI_Controller
         $this->session->set_userdata('previous_url', current_url());
     }
 
+    public function Lainnya($url)
+    {
+        $data =
+            [
+                'isinya' => 'admin/lainnya',
+                'url' => $this->Surat_model->getByUrl($url),
+                'warga' => $this->Penduduk_model->getAll(),
+                'trans' => $this->Surat_model->getTrans()
+            ];
+        $this->load->view('view', $data);
+
+        $this->session->set_userdata('previous_url', current_url());
+    }
+
     public function print($surat)
     {
         $warga = $this->input->post('warga');
@@ -48,6 +62,23 @@ class PembuatanSurat extends CI_Controller
             [
                 'warga' => $this->Penduduk_model->getById($warga),
                 'nosurat' => $nosurat
+            ];
+        $this->load->view('surat/' . $surat, $data);
+
+        $this->session->set_userdata('previous_url', current_url());
+    }
+
+    public function printLainnya($surat)
+    {
+        $warga = $this->input->post('warga');
+        $nosurat = $this->input->post('nosurat');
+        $ket = $this->input->post('ket');
+        $this->Surat_model->save();
+        $data =
+            [
+                'warga' => $this->Penduduk_model->getById($warga),
+                'nosurat' => $nosurat,
+                'ket' => $ket
             ];
         $this->load->view('surat/' . $surat, $data);
 

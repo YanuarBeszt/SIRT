@@ -37,7 +37,7 @@
                                     <td><?= $srt->namaPenduduk; ?></td>
                                     <td><?= $srt->nama; ?></td>
                                     <td><?= $srt->tanggal; ?></td>
-                                    <?php $id = $srt->id; ?>
+                                    <?php $id = $srt->idTransaksi; ?>
                                     <td>
                                         <a class="btn btn-danger" href="#" data-toggle="modal" data-target="#deleteRekapModal">Hapus</a>
                                     </td>
@@ -66,7 +66,7 @@
             <div class="modal-footer">
                 <button class="btn btn-primary" type="button" data-dismiss="modal">Cancel</button>
                 <form action="<?= base_url() ?>Admin/Rekap/hapus" method="post">
-                    <input type="hidden" name="nosurat" value="<?= $srt->id; ?>">
+                    <input type="hidden" name="nosurat" value="<?= $srt->idTransaksi; ?>">
                     <input class="btn btn-danger" type="submit" name="btn" value="Hapus" />
                 </form>
             </div>

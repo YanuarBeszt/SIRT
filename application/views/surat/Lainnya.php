@@ -105,7 +105,7 @@
                         <tr>
                             <td class="isian">Maksud/Keperluan</td>
                             <td>:</td>
-                            <td>Surat Pengantar Pembuatan KTP</td>
+                            <td><?= $ket ?></td>
                         </tr>
                         <div class="clear"></div>
                         <tr></tr>

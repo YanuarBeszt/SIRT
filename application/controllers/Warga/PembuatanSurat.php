@@ -50,7 +50,40 @@ class PembuatanSurat extends CI_Controller
     {
         $this->Surat_model->save();
 
-        $this->session->set_flashdata('success', 'Berhasil Mengajukan Surat KeRT');
+        $this->session->set_flashdata('success', 'Berhasil Mengajukan Surat Ke RT');
         redirect(base_url('Viewp'));
+    }
+
+    public function Lainnya($url)
+    {
+        $nik = $this->session->userdata('nik');
+        $data =
+            [
+                'isinya' => 'warga/lainnya',
+                'url' => $this->Surat_model->getByUrl($url),
+                'pend' => $this->Penduduk_model->getById($nik),
+                'trans' => $this->Surat_model->getTrans()
+            ];
+        $this->load->view('view', $data);
+
+        $this->session->set_userdata('previous_url', current_url());
+    }
+
+    public function printLainnya($surat)
+    {
+        $warga = $this->input->post('warga');
+        $nosurat = $this->input->post('nosurat');
+        $id = $this->input->post('idsurat');
+        $ket = $this->input->post('ket');
+        $data =
+            [
+                'warga' => $this->Penduduk_model->getById($warga),
+                'nosurat' => $nosurat,
+                'ket' => $ket,
+                'id' => $id
+            ];
+        $this->load->view('surat/' . $surat, $data);
+
+        $this->session->set_userdata('previous_url', current_url());
     }
 }

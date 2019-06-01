@@ -30,11 +30,23 @@
                                             <i class="fas fa-print"></i>
                                         </span>
                                         <span class="text">Print</span>
-                                    </a></td>
+                                    </a>
+                                </td>
                                 <?php $no++ ?>
                             </tr>
-                        </tbody>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
+                        <tr>
+                            <td></td>
+                            <td>Surat Lainnya</td>
+                            <td><a href="http://localhost/SIRT/Admin/PembuatanSurat/Lainnya/lainnya" class="btn btn-success">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-print"></i>
+                                    </span>
+                                    <span class="text">Print</span>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>

@@ -39,9 +39,20 @@
                                         <span class="text">Buat Surat</span>
                                     </a></td>
                                 <?php $no++ ?>
-                            </tr>
-                        </tbody>
-                    <?php endforeach; ?>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Lainnya</td>
+                            <td><a href="http://localhost/SIRT/Warga/PembuatanSurat/Lainnya/lainnya" class="btn btn-success">
+                                    <span class="icon text-white">
+                                        <i class="fas fa-print"></i>
+                                    </span>
+                                    <span class="text">Buat Surat</span>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
